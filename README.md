@@ -1,2 +1,2 @@
 # physics
-a project
+a project about particles and interaction simulation.
