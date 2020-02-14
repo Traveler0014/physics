@@ -127,14 +127,15 @@ class Space:
 
 s = Space()
 
-for i in range(3): s.append(10*np.random.randn(2),mass = np.random.rand()*10**6, q = (np.random.rand())*10**(-4))
+for i in range(10):
+    s.append(80*np.random.randn(2),mass = np.random.rand()*10**5, q = np.random.randn()*1)
 #s.append([0,0],mass = 1,q = 1)
 
 e = Field(lambda q2, q1, r: -9*(10**9)*q2*q1/(r**2), 'q', 2)
 
 g = Field(lambda m2, m1, r: 6.67*10**(-11)*m2*m1/(r**2), 'mass', 2)
 
-#s.field(e)
+s.field(e)
 
 s.field(g)
 
@@ -142,6 +143,5 @@ print(s.particles)
 
 print(s.fields)
 
-s.plot(t=100,dt=0.01)
 
 print("test start!")
